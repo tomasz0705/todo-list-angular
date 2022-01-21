@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Lista zadań';
+  config: { [key: string]: string } | null = null;
+
+  constructor() {
+    setTimeout(() => {
+      this.config = {
+        title: 'Lista zadań',
+        footer: '© Lista zadań zbudowana w Angularze.',
+        date: new Date().toDateString()
+      }
+    }, 500);
+  }
+/*   title = 'Lista zadań';
 
   get footer(): string {
     return '© Lista zadań, All rights reserved.'; //zapis TypeScript'owy z użyciem get
@@ -18,5 +29,5 @@ export class AppComponent {
 
   getDate(): Date {
     return new Date();
-  }
+  } */
 }
