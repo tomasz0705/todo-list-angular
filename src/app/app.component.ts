@@ -5,4 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'Lista zadań';
+
+  get footer(): string {
+    return '2022 © Lista zadań, All rights reserved.'; //zapis TypeScript'owy z użyciem get
+  }
+
+  getFooter(): string {
+    return '2022 © Lista zadań, All rights reserved.'; //pole klasy (metoda)
+  }
+}
