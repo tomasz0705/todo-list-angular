@@ -9,10 +9,14 @@ export class AppComponent {
   title = 'Lista zadań';
 
   get footer(): string {
-    return '2022 © Lista zadań, All rights reserved.'; //zapis TypeScript'owy z użyciem get
+    return '© Lista zadań, All rights reserved.'; //zapis TypeScript'owy z użyciem get
   }
 
   getFooter(): string {
     return '2022 © Lista zadań, All rights reserved.'; //pole klasy (metoda)
+  }
+
+  getDate(): Date {
+    return new Date();
   }
 }
