@@ -37,6 +37,7 @@ export class AppComponent {
         date: new Date().toDateString()
       }
     }, 500);
+    this.sortTasks();
   }
 
   clearTasks() {
@@ -52,22 +53,26 @@ export class AppComponent {
     this.tasks.push(task);
     this.taskName = '';
     this.taskDate = '';
+    this.sortTasks();
   }
 
   switchEditMode() {
     this.editMode = !this.editMode;
   }
-/*   title = 'Lista zadań';
 
-  get footer(): string {
-    return '© Lista zadań, All rights reserved.'; //zapis TypeScript'owy z użyciem get
+  markTaskAsDone(task: Task) {
+    task.done = true;
+    this.sortTasks();
   }
 
-  getFooter(): string {
-    return '2022 © Lista zadań, All rights reserved.'; //pole klasy (metoda)
+  deleteTask(task: Task) {
+    this.tasks = this.tasks.filter(e => e !== task);
+    this.sortTasks();
   }
 
-  getDate(): Date {
-    return new Date();
-  } */
+  private sortTasks() {
+    this.tasks = this.tasks.sort((a: Task, b: Task) => (
+      a.done === b.done ? 0 : a.done ? 1 : -1
+    ))
+  }
 }
