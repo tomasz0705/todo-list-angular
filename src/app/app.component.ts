@@ -20,7 +20,7 @@ export class AppComponent {
     {
       name: 'Nauka Angulara',
       deadline: '2022-01-03',
-      done: false,
+      done: true,
     },
     {
       name: 'Sprzątanie kuwety',
